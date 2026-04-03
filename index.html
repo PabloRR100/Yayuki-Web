@@ -12,6 +12,134 @@
 </head>
 <body>
 
+  <!-- SVG food illustration defs -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <defs>
+      <!-- Especiales: star plate with steam -->
+      <symbol id="ico-especiales" viewBox="0 0 64 64">
+        <ellipse cx="32" cy="42" rx="24" ry="10" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M14 42c0-4 8-18 18-18s18 14 18 18" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M32 24l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6z" fill="currentColor" opacity="0.3"/>
+        <path d="M22 18c0-4 2-8 2-8" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.4"/>
+        <path d="M32 14c0-4 2-8 2-8" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.4"/>
+        <path d="M42 18c0-4 2-8 2-8" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.4"/>
+      </symbol>
+      <!-- Otsumami: bowl with chopsticks and steam -->
+      <symbol id="ico-otsumami" viewBox="0 0 64 64">
+        <ellipse cx="32" cy="44" rx="22" ry="8" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M10 44c0-8 6-20 22-20s22 12 22 20" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <line x1="18" y1="12" x2="40" y2="36" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="22" y1="10" x2="44" y2="34" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M26 20c-1-3 0-6 0-6" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.35"/>
+        <path d="M34 18c-1-3 0-6 0-6" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.35"/>
+      </symbol>
+      <!-- Hosomaki: cross-section with nori, rice, filling -->
+      <symbol id="ico-hosomaki" viewBox="0 0 64 64">
+        <circle cx="32" cy="32" r="18" fill="none" stroke="currentColor" stroke-width="2"/>
+        <circle cx="32" cy="32" r="14" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3"/>
+        <circle cx="32" cy="32" r="6" fill="currentColor" opacity="0.15"/>
+        <circle cx="32" cy="32" r="6" fill="none" stroke="currentColor" stroke-width="1.2"/>
+        <!-- Small rice grains -->
+        <ellipse cx="22" cy="28" rx="2" ry="1" fill="currentColor" opacity="0.2" transform="rotate(-30 22 28)"/>
+        <ellipse cx="38" cy="22" rx="2" ry="1" fill="currentColor" opacity="0.2" transform="rotate(20 38 22)"/>
+        <ellipse cx="42" cy="36" rx="2" ry="1" fill="currentColor" opacity="0.2" transform="rotate(-10 42 36)"/>
+        <ellipse cx="24" cy="40" rx="2" ry="1" fill="currentColor" opacity="0.2" transform="rotate(40 24 40)"/>
+      </symbol>
+      <!-- Uramaki: inside-out roll cross-section -->
+      <symbol id="ico-uramaki" viewBox="0 0 64 64">
+        <circle cx="32" cy="32" r="18" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3"/>
+        <circle cx="32" cy="32" r="14" fill="none" stroke="currentColor" stroke-width="2"/>
+        <circle cx="28" cy="30" r="4" fill="currentColor" opacity="0.12"/>
+        <circle cx="28" cy="30" r="4" fill="none" stroke="currentColor" stroke-width="1"/>
+        <circle cx="36" cy="30" r="3" fill="currentColor" opacity="0.12"/>
+        <circle cx="36" cy="30" r="3" fill="none" stroke="currentColor" stroke-width="1"/>
+        <ellipse cx="32" cy="37" rx="5" ry="3" fill="currentColor" opacity="0.12"/>
+        <ellipse cx="32" cy="37" rx="5" ry="3" fill="none" stroke="currentColor" stroke-width="1"/>
+        <!-- Sesame seeds outside -->
+        <circle cx="17" cy="26" r="1" fill="currentColor" opacity="0.25"/>
+        <circle cx="20" cy="18" r="1" fill="currentColor" opacity="0.25"/>
+        <circle cx="44" cy="22" r="1" fill="currentColor" opacity="0.25"/>
+        <circle cx="46" cy="34" r="1" fill="currentColor" opacity="0.25"/>
+        <circle cx="26" cy="48" r="1" fill="currentColor" opacity="0.25"/>
+        <circle cx="38" cy="47" r="1" fill="currentColor" opacity="0.25"/>
+      </symbol>
+      <!-- Temaki: hand roll cone -->
+      <symbol id="ico-temaki" viewBox="0 0 64 64">
+        <path d="M16 16 L48 16 L32 56 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M16 16 Q32 10 48 16" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <ellipse cx="32" cy="16" rx="16" ry="4" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <!-- Filling peeking out -->
+        <circle cx="28" cy="14" r="2.5" fill="currentColor" opacity="0.15"/>
+        <circle cx="36" cy="13" r="3" fill="currentColor" opacity="0.12"/>
+        <path d="M30 11c-1-3 1-5 2-6" fill="none" stroke="currentColor" stroke-width="0.8" stroke-linecap="round" opacity="0.3"/>
+        <path d="M35 10c0-3 2-5 3-5" fill="none" stroke="currentColor" stroke-width="0.8" stroke-linecap="round" opacity="0.3"/>
+      </symbol>
+      <!-- Nigiri: fish on rice -->
+      <symbol id="ico-nigiri" viewBox="0 0 64 64">
+        <ellipse cx="32" cy="42" rx="20" ry="10" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <ellipse cx="32" cy="42" rx="16" ry="7" fill="currentColor" opacity="0.06"/>
+        <!-- Fish on top -->
+        <path d="M14 32 Q24 22 36 26 Q48 30 52 32 Q48 36 36 34 Q24 30 14 32Z" fill="currentColor" opacity="0.15"/>
+        <path d="M14 32 Q24 22 36 26 Q48 30 52 32 Q48 36 36 34 Q24 30 14 32Z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <!-- Fish grain lines -->
+        <path d="M22 28 Q26 32 30 30" fill="none" stroke="currentColor" stroke-width="0.6" opacity="0.3"/>
+        <path d="M30 27 Q34 31 38 30" fill="none" stroke="currentColor" stroke-width="0.6" opacity="0.3"/>
+        <path d="M38 29 Q42 33 46 31" fill="none" stroke="currentColor" stroke-width="0.6" opacity="0.3"/>
+      </symbol>
+      <!-- Sashimi: sliced fish on plate -->
+      <symbol id="ico-sashimi" viewBox="0 0 64 64">
+        <ellipse cx="32" cy="48" rx="26" ry="6" fill="none" stroke="currentColor" stroke-width="1.2"/>
+        <!-- Fish slices fanned -->
+        <path d="M16 40 Q20 28 26 30 L22 44Z" fill="currentColor" opacity="0.1" stroke="currentColor" stroke-width="1"/>
+        <path d="M22 38 Q26 26 32 28 L28 42Z" fill="currentColor" opacity="0.12" stroke="currentColor" stroke-width="1"/>
+        <path d="M28 36 Q32 24 38 26 L34 40Z" fill="currentColor" opacity="0.14" stroke="currentColor" stroke-width="1"/>
+        <path d="M34 36 Q38 24 44 26 L40 40Z" fill="currentColor" opacity="0.12" stroke="currentColor" stroke-width="1"/>
+        <path d="M40 38 Q44 28 48 30 L46 42Z" fill="currentColor" opacity="0.1" stroke="currentColor" stroke-width="1"/>
+        <!-- Garnish -->
+        <circle cx="18" cy="44" r="2" fill="currentColor" opacity="0.15"/>
+      </symbol>
+      <!-- Combos: bento box -->
+      <symbol id="ico-combos" viewBox="0 0 64 64">
+        <rect x="8" y="14" width="48" height="36" rx="3" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <line x1="32" y1="14" x2="32" y2="50" stroke="currentColor" stroke-width="1"/>
+        <line x1="8" y1="32" x2="32" y2="32" stroke="currentColor" stroke-width="1"/>
+        <!-- Food in compartments -->
+        <circle cx="20" cy="23" r="5" fill="currentColor" opacity="0.08" stroke="currentColor" stroke-width="0.8"/>
+        <circle cx="20" cy="23" r="2" fill="currentColor" opacity="0.1"/>
+        <ellipse cx="20" cy="41" rx="7" ry="4" fill="currentColor" opacity="0.08" stroke="currentColor" stroke-width="0.8"/>
+        <rect x="38" y="20" width="12" height="6" rx="3" fill="currentColor" opacity="0.08" stroke="currentColor" stroke-width="0.8"/>
+        <rect x="38" y="32" width="12" height="6" rx="3" fill="currentColor" opacity="0.08" stroke="currentColor" stroke-width="0.8"/>
+        <circle cx="44" cy="45" r="3" fill="currentColor" opacity="0.08" stroke="currentColor" stroke-width="0.8"/>
+      </symbol>
+      <!-- Postres: mochi -->
+      <symbol id="ico-postres" viewBox="0 0 64 64">
+        <ellipse cx="20" cy="40" rx="12" ry="10" fill="currentColor" opacity="0.08"/>
+        <ellipse cx="20" cy="40" rx="12" ry="10" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M14 36 Q20 30 26 36" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.4"/>
+        <ellipse cx="42" cy="38" rx="14" ry="12" fill="currentColor" opacity="0.08"/>
+        <ellipse cx="42" cy="38" rx="14" ry="12" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M34 34 Q42 26 50 34" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.4"/>
+        <circle cx="32" cy="22" r="8" fill="currentColor" opacity="0.08"/>
+        <circle cx="32" cy="22" r="8" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M27 19 Q32 14 37 19" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.4"/>
+      </symbol>
+      <!-- Bebidas: tall glass -->
+      <symbol id="ico-bebidas" viewBox="0 0 64 64">
+        <path d="M20 10 L18 52 L46 52 L44 10Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M20 10h24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <ellipse cx="32" cy="52" rx="14" ry="3" fill="none" stroke="currentColor" stroke-width="1"/>
+        <!-- Liquid -->
+        <path d="M21 24 L19 48 L45 48 L43 24Z" fill="currentColor" opacity="0.06"/>
+        <!-- Bubbles -->
+        <circle cx="28" cy="36" r="2" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>
+        <circle cx="36" cy="40" r="1.5" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>
+        <circle cx="32" cy="30" r="1" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.3"/>
+        <!-- Ice cube -->
+        <rect x="26" y="26" width="6" height="5" rx="1" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.3" transform="rotate(-8 29 28)"/>
+      </symbol>
+    </defs>
+  </svg>
+
   <!-- Grain overlay -->
   <div class="grain" aria-hidden="true"></div>
 
@@ -86,7 +214,7 @@
           Pedir Ahora
         </a>
         <a href="#menu" class="btn btn--ghost">Ver Carta</a>
-        <a href="https://www.instagram.com/yayukisushi/" class="btn btn--ghost" target="_blank" rel="noopener">
+        <a href="https://www.instagram.com/yayukisushi/" class="btn btn--instagram" target="_blank" rel="noopener">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
           @yayukisushi
         </a>
@@ -544,7 +672,11 @@
     </button>
     <div class="theme-switcher__panel" id="themePanel">
       <p class="theme-switcher__label">Estilo</p>
-      <button class="theme-switcher__option active" data-theme="wabisabi">
+      <button class="theme-switcher__option active" data-theme="matsuri">
+        <span class="theme-swatch theme-swatch--matsuri"></span>
+        <span>Matsuri</span>
+      </button>
+      <button class="theme-switcher__option" data-theme="wabisabi">
         <span class="theme-swatch theme-swatch--wabisabi"></span>
         <span>Wabi-Sabi</span>
       </button>
@@ -555,10 +687,6 @@
       <button class="theme-switcher__option" data-theme="sakura">
         <span class="theme-swatch theme-swatch--sakura"></span>
         <span>Sakura</span>
-      </button>
-      <button class="theme-switcher__option" data-theme="matsuri">
-        <span class="theme-swatch theme-swatch--matsuri"></span>
-        <span>Matsuri</span>
       </button>
       <button class="theme-switcher__option" data-theme="omakase">
         <span class="theme-swatch theme-swatch--omakase"></span>

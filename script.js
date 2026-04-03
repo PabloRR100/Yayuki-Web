@@ -122,7 +122,7 @@
       themeOptions.forEach(o => o.classList.remove('active'));
       option.classList.add('active');
 
-      if (theme === 'wabisabi') {
+      if (theme === 'matsuri') {
         document.documentElement.removeAttribute('data-theme');
       } else {
         document.documentElement.setAttribute('data-theme', theme);
