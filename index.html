@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yayuki — Japanese Delivery & Takeaway</title>
+  <meta name="description" content="Yayuki — Sushi artesanal, delivery y takeaway en Montequinto. Pedidos por WhatsApp.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&family=Noto+Serif+JP:wght@200;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Grain overlay -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <a href="#" class="nav__logo">
+      <img src="logo.jpg" alt="Yayuki" class="nav__logo-img">
+      <span class="nav__logo-en">Yayuki</span>
+    </a>
+    <div class="nav__links">
+      <a href="#menu">Carta</a>
+      <a href="#about">Sobre Nosotros</a>
+      <a href="#contact">Contacto</a>
+      <a href="https://wa.me/34624619546" class="nav__cta" target="_blank" rel="noopener">Pedir</a>
+    </div>
+    <button class="nav__burger" id="burger" aria-label="Abrir menú">
+      <span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#menu" class="mobile-menu__link">Carta</a>
+    <a href="#about" class="mobile-menu__link">Sobre Nosotros</a>
+    <a href="#contact" class="mobile-menu__link">Contacto</a>
+    <a href="https://wa.me/34624619546" class="mobile-menu__link mobile-menu__cta" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+  </div>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero__content">
+      <div class="hero__logo-wrapper">
+        <img src="logo.jpg" alt="Yayuki Sushi" class="hero__logo">
+      </div>
+      <p class="hero__tag">Delivery & Takeaway · Montequinto</p>
+      <h1 class="hero__title">
+        <span class="hero__title-line">Sushi</span>
+        <span class="hero__title-line hero__title-line--accent">Artesanal</span>
+      </h1>
+      <p class="hero__sub">Tradición japonesa con alma andaluza.<br>Pedidos por WhatsApp.</p>
+      <div class="hero__actions">
+        <a href="https://wa.me/34624619546" class="btn btn--primary" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.287 0-4.405-.738-6.13-1.99l-.44-.327-2.63.882.882-2.63-.327-.44A9.965 9.965 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
+          Pedir Ahora
+        </a>
+        <a href="#menu" class="btn btn--ghost">Ver Carta</a>
+      </div>
+    </div>
+    <div class="hero__vertical" aria-hidden="true">
+      <span>矢雪</span>
+    </div>
+    <div class="hero__scroll" aria-hidden="true">
+      <span>scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </header>
+
+  <!-- Brushstroke divider -->
+  <div class="divider" aria-hidden="true">
+    <svg viewBox="0 0 1200 20" preserveAspectRatio="none">
+      <path d="M0,10 C150,2 350,18 600,10 C850,2 1050,18 1200,10" stroke="var(--ink)" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.3"/>
+    </svg>
+  </div>
+
+  <!-- Menu Section -->
+  <section class="menu" id="menu">
+    <div class="section-header">
+      <span class="section-header__jp">お品書き</span>
+      <h2 class="section-header__title">Nuestra Carta</h2>
+      <p class="section-header__sub">Ingredientes frescos, preparación artesanal</p>
+    </div>
+
+    <!-- Category tabs -->
+    <div class="menu__tabs" role="tablist">
+      <button class="menu__tab active" role="tab" data-cat="especiales">Especiales</button>
+      <button class="menu__tab" role="tab" data-cat="otsumami">Otsumami</button>
+      <button class="menu__tab" role="tab" data-cat="hosomaki">Hosomaki</button>
+      <button class="menu__tab" role="tab" data-cat="uramaki">Uramaki</button>
+      <button class="menu__tab" role="tab" data-cat="temaki">Temaki</button>
+      <button class="menu__tab" role="tab" data-cat="nigiri">Nigiri</button>
+      <button class="menu__tab" role="tab" data-cat="sashimi">Sashimi</button>
+      <button class="menu__tab" role="tab" data-cat="combos">Combos</button>
+      <button class="menu__tab" role="tab" data-cat="postres">Postres</button>
+      <button class="menu__tab" role="tab" data-cat="bebidas">Bebidas</button>
+    </div>
+
+    <!-- Menu items -->
+    <div class="menu__grid" id="menuGrid">
+
+      <!-- Especiales -->
+      <div class="menu__item" data-cat="especiales">
+        <div class="menu__item-info">
+          <h3>Bao Buns</h3>
+          <p>Panecillos al vapor rellenos con proteína a elegir</p>
+        </div>
+        <span class="menu__item-price">€5.50</span>
+      </div>
+      <div class="menu__item" data-cat="especiales">
+        <div class="menu__item-info">
+          <h3>Special Rolls</h3>
+          <p>Creaciones del chef, pregunta por la selección del día</p>
+        </div>
+        <span class="menu__item-price">€9.00</span>
+      </div>
+
+      <!-- Otsumami -->
+      <div class="menu__item" data-cat="otsumami">
+        <div class="menu__item-info">
+          <h3>Edamame</h3>
+          <p>Vainas de soja con sal marina</p>
+        </div>
+        <span class="menu__item-price">€3.50</span>
+      </div>
+      <div class="menu__item" data-cat="otsumami">
+        <div class="menu__item-info">
+          <h3>Takoyaki</h3>
+          <p>Bolitas de pulpo con salsa especial</p>
+        </div>
+        <span class="menu__item-price">€5.50</span>
+      </div>
+      <div class="menu__item" data-cat="otsumami">
+        <div class="menu__item-info">
+          <h3>Gyozas</h3>
+          <p>Empanadillas japonesas a la plancha</p>
+        </div>
+        <span class="menu__item-price">€5.00</span>
+      </div>
+      <div class="menu__item" data-cat="otsumami">
+        <div class="menu__item-info">
+          <h3>Arroz de Sushi</h3>
+          <p>Cuenco de arroz aderezado estilo japonés</p>
+        </div>
+        <span class="menu__item-price">€2.50</span>
+      </div>
+
+      <!-- Hosomaki -->
+      <div class="menu__item" data-cat="hosomaki">
+        <div class="menu__item-info">
+          <h3>Kappa Maki</h3>
+          <p>Pepino</p>
+        </div>
+        <span class="menu__item-price">€3.50</span>
+      </div>
+      <div class="menu__item" data-cat="hosomaki">
+        <div class="menu__item-info">
+          <h3>Avocado Maki</h3>
+          <p>Aguacate</p>
+        </div>
+        <span class="menu__item-price">€3.90</span>
+      </div>
+      <div class="menu__item" data-cat="hosomaki">
+        <div class="menu__item-info">
+          <h3>Sake Maki</h3>
+          <p>Salmón fresco</p>
+        </div>
+        <span class="menu__item-price">€4.50</span>
+      </div>
+      <div class="menu__item" data-cat="hosomaki">
+        <div class="menu__item-info">
+          <h3>Tekka Maki</h3>
+          <p>Atún rojo</p>
+        </div>
+        <span class="menu__item-price">€4.90</span>
+      </div>
+
+      <!-- Uramaki -->
+      <div class="menu__item" data-cat="uramaki">
+        <div class="menu__item-info">
+          <h3>Spicy Salmon Roll</h3>
+          <p>Salmón picante, aguacate, sésamo tostado</p>
+        </div>
+        <span class="menu__item-price">€8.50</span>
+      </div>
+      <div class="menu__item" data-cat="uramaki">
+        <div class="menu__item-info">
+          <h3>Tuna Crunch Roll</h3>
+          <p>Atún, tempura crunch, cebollino</p>
+        </div>
+        <span class="menu__item-price">€9.00</span>
+      </div>
+      <div class="menu__item" data-cat="uramaki">
+        <div class="menu__item-info">
+          <h3>Ebi Tempura Roll</h3>
+          <p>Langostino en tempura, aguacate, salsa teriyaki</p>
+        </div>
+        <span class="menu__item-price">€9.50</span>
+      </div>
+
+      <!-- Temaki -->
+      <div class="menu__item" data-cat="temaki">
+        <div class="menu__item-info">
+          <h3>Unagi Temaki</h3>
+          <p>Anguila glaseada, aguacate</p>
+        </div>
+        <span class="menu__item-price">€6.50</span>
+      </div>
+      <div class="menu__item" data-cat="temaki">
+        <div class="menu__item-info">
+          <h3>Wagyu Temaki</h3>
+          <p>Wagyu flambeado, trufa, cebollino</p>
+        </div>
+        <span class="menu__item-price">€9.00</span>
+      </div>
+
+      <!-- Nigiri -->
+      <div class="menu__item" data-cat="nigiri">
+        <div class="menu__item-info">
+          <h3>Sake Nigiri</h3>
+          <p>Salmón · 2 piezas</p>
+        </div>
+        <span class="menu__item-price">€4.50</span>
+      </div>
+      <div class="menu__item" data-cat="nigiri">
+        <div class="menu__item-info">
+          <h3>Hamachi Nigiri</h3>
+          <p>Pez limón · 2 piezas</p>
+        </div>
+        <span class="menu__item-price">€5.00</span>
+      </div>
+      <div class="menu__item" data-cat="nigiri">
+        <div class="menu__item-info">
+          <h3>Maguro Nigiri</h3>
+          <p>Atún rojo · 2 piezas</p>
+        </div>
+        <span class="menu__item-price">€5.50</span>
+      </div>
+      <div class="menu__item" data-cat="nigiri">
+        <div class="menu__item-info">
+          <h3>Wagyu Nigiri</h3>
+          <p>Wagyu flambeado · 2 piezas</p>
+        </div>
+        <span class="menu__item-price">€7.00</span>
+      </div>
+
+      <!-- Sashimi -->
+      <div class="menu__item" data-cat="sashimi">
+        <div class="menu__item-info">
+          <h3>Sashimi Salmón</h3>
+          <p>5 cortes de salmón premium</p>
+        </div>
+        <span class="menu__item-price">€7.50</span>
+      </div>
+      <div class="menu__item" data-cat="sashimi">
+        <div class="menu__item-info">
+          <h3>Sashimi Atún</h3>
+          <p>5 cortes de atún rojo</p>
+        </div>
+        <span class="menu__item-price">€8.50</span>
+      </div>
+      <div class="menu__item" data-cat="sashimi">
+        <div class="menu__item-info">
+          <h3>Sashimi Mixto</h3>
+          <p>Selección variada del día · 10 cortes</p>
+        </div>
+        <span class="menu__item-price">€14.00</span>
+      </div>
+
+      <!-- Combos -->
+      <div class="menu__item" data-cat="combos">
+        <div class="menu__item-info">
+          <h3>Bento Individual</h3>
+          <p>Selección del chef para 1 persona</p>
+        </div>
+        <span class="menu__item-price">€13.90</span>
+      </div>
+      <div class="menu__item" data-cat="combos">
+        <div class="menu__item-info">
+          <h3>Bento Dúo</h3>
+          <p>Surtido variado para 2 personas</p>
+        </div>
+        <span class="menu__item-price">€26.50</span>
+      </div>
+      <div class="menu__item" data-cat="combos">
+        <div class="menu__item-info">
+          <h3>Bento Familiar</h3>
+          <p>Gran selección para 3-4 personas</p>
+        </div>
+        <span class="menu__item-price">€52.50</span>
+      </div>
+
+      <!-- Postres -->
+      <div class="menu__item" data-cat="postres">
+        <div class="menu__item-info">
+          <h3>Mochi Helado</h3>
+          <p>Surtido de sabores · 3 uds</p>
+        </div>
+        <span class="menu__item-price">€4.50</span>
+      </div>
+      <div class="menu__item" data-cat="postres">
+        <div class="menu__item-info">
+          <h3>Tarta Chocolate-Miso</h3>
+          <p>Chocolate negro con un toque de miso blanco</p>
+        </div>
+        <span class="menu__item-price">€5.00</span>
+      </div>
+      <div class="menu__item" data-cat="postres">
+        <div class="menu__item-info">
+          <h3>Tarta Idiazábal</h3>
+          <p>Tarta de queso Idiazábal estilo japonés</p>
+        </div>
+        <span class="menu__item-price">€5.00</span>
+      </div>
+
+      <!-- Bebidas -->
+      <div class="menu__item" data-cat="bebidas">
+        <div class="menu__item-info">
+          <h3>Refresco</h3>
+          <p>Coca-Cola, Fanta, Aquarius</p>
+        </div>
+        <span class="menu__item-price">€1.80</span>
+      </div>
+      <div class="menu__item" data-cat="bebidas">
+        <div class="menu__item-info">
+          <h3>Cerveza Japonesa</h3>
+          <p>Asahi o Kirin Ichiban</p>
+        </div>
+        <span class="menu__item-price">€3.00</span>
+      </div>
+      <div class="menu__item" data-cat="bebidas">
+        <div class="menu__item-info">
+          <h3>Fino / Manzanilla</h3>
+          <p>Selección de Jerez</p>
+        </div>
+        <span class="menu__item-price">€2.50</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="divider" aria-hidden="true">
+    <svg viewBox="0 0 1200 20" preserveAspectRatio="none">
+      <path d="M0,10 C200,18 400,2 600,10 C800,18 1000,2 1200,10" stroke="var(--ink)" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.25"/>
+    </svg>
+  </div>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="about__layout">
+      <div class="about__text">
+        <span class="section-header__jp">私たちについて</span>
+        <h2 class="section-header__title">Sobre Nosotros</h2>
+        <p>En Yayuki fusionamos la precisión de la cocina japonesa con la calidez del sur de España. Cada pieza es preparada al momento con ingredientes frescos y técnica artesanal.</p>
+        <p>Nuestro nombre, <em>Yayuki</em> (矢雪), evoca la pureza de la nieve y la precisión de la flecha — valores que guían cada corte, cada rollo, cada plato que sale de nuestra cocina.</p>
+      </div>
+      <div class="about__details">
+        <div class="about__detail">
+          <span class="about__detail-number">鮮</span>
+          <span class="about__detail-label">Ingredientes frescos cada día</span>
+        </div>
+        <div class="about__detail">
+          <span class="about__detail-number">匠</span>
+          <span class="about__detail-label">Técnica artesanal japonesa</span>
+        </div>
+        <div class="about__detail">
+          <span class="about__detail-number">心</span>
+          <span class="about__detail-label">Preparado con corazón</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="contact__layout">
+      <div class="contact__info">
+        <span class="section-header__jp">ご連絡</span>
+        <h2 class="section-header__title">Encuéntranos</h2>
+        <div class="contact__detail">
+          <h4>Dirección</h4>
+          <p>Calle Yerbabuena, 8<br>Montequinto, Sevilla</p>
+        </div>
+        <div class="contact__detail">
+          <h4>Pedidos</h4>
+          <p>WhatsApp: <a href="https://wa.me/34624619546">624 619 546</a></p>
+        </div>
+        <div class="contact__detail">
+          <h4>Cómo pedir</h4>
+          <p>1. Elige de la carta<br>2. Envía tu pedido por WhatsApp<br>3. Te confirmamos y preparamos</p>
+        </div>
+      </div>
+      <div class="contact__cta">
+        <div class="contact__cta-inner">
+          <span class="contact__cta-jp">注文</span>
+          <h3>¿Listo para pedir?</h3>
+          <a href="https://wa.me/34624619546" class="btn btn--primary btn--lg" target="_blank" rel="noopener">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.287 0-4.405-.738-6.13-1.99l-.44-.327-2.63.882.882-2.63-.327-.44A9.965 9.965 0 012 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
+            Pedir por WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <img src="logo.jpg" alt="Yayuki" class="footer__logo">
+        <div>
+          <span class="footer__name">Yayuki</span>
+          <span class="footer__sub">Delivery & Takeaway</span>
+        </div>
+      </div>
+      <div class="footer__links">
+        <a href="#menu">Carta</a>
+        <a href="#about">Nosotros</a>
+        <a href="#contact">Contacto</a>
+        <a href="https://wa.me/34624619546" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+      <p class="footer__copy">&copy; 2026 Yayuki. Montequinto, Sevilla.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
