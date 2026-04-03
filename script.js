@@ -7,10 +7,9 @@
 
   // --- Scroll: Nav background ---
   const nav = document.getElementById('nav');
-  const onScroll = () => {
+  window.addEventListener('scroll', () => {
     nav.classList.toggle('nav--scrolled', window.scrollY > 60);
-  };
-  window.addEventListener('scroll', onScroll, { passive: true });
+  }, { passive: true });
 
   // --- Mobile menu ---
   const burger = document.getElementById('burger');
@@ -30,48 +29,70 @@
     });
   });
 
-  // --- Menu tabs ---
+  // --- Menu: Sticky tabs detection ---
+  const tabsWrap = document.getElementById('menuTabsWrap');
+  const stickyObserver = new IntersectionObserver(
+    ([entry]) => { tabsWrap.classList.toggle('stuck', !entry.isIntersecting); },
+    { threshold: 1, rootMargin: '-1px 0px 0px 0px' }
+  );
+  stickyObserver.observe(tabsWrap);
+
+  // --- Menu: Tab filtering ---
   const tabs = document.querySelectorAll('.menu__tab');
-  const items = document.querySelectorAll('.menu__item');
+  const cards = document.querySelectorAll('.menu__card');
 
   function filterMenu(cat) {
-    items.forEach(item => {
-      const match = item.dataset.cat === cat;
-      item.classList.toggle('hidden', !match);
+    // Hide/show cards
+    cards.forEach(card => {
+      const match = card.dataset.cat === cat;
+      card.classList.toggle('hidden', !match);
     });
 
-    tabs.forEach(tab => {
-      tab.classList.toggle('active', tab.dataset.cat === cat);
+    // Active tab
+    tabs.forEach(tab => tab.classList.toggle('active', tab.dataset.cat === cat));
+
+    // Stagger animation
+    const visible = document.querySelectorAll('.menu__card:not(.hidden)');
+    visible.forEach((card, i) => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(12px)';
+      setTimeout(() => {
+        card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+      }, i * 60);
     });
   }
 
   tabs.forEach(tab => {
-    tab.addEventListener('click', () => filterMenu(tab.dataset.cat));
+    tab.addEventListener('click', () => {
+      filterMenu(tab.dataset.cat);
+      // Scroll active tab into view
+      tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    });
   });
 
-  // Initialize with first category
+  // Initialize
   filterMenu('especiales');
 
   // --- Scroll reveal ---
   const reveals = document.querySelectorAll(
-    '.section-header, .menu__tabs, .about__text, .about__details, .contact__info, .contact__cta'
+    '.section-header, .menu__tabs-wrap, .about__text, .about__details, .contact__info, .contact__cta'
   );
-
   reveals.forEach(el => el.classList.add('reveal'));
 
-  const observer = new IntersectionObserver(
+  const revealObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
+          revealObserver.unobserve(entry.target);
         }
       });
     },
     { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
   );
-
-  reveals.forEach(el => observer.observe(el));
+  reveals.forEach(el => revealObserver.observe(el));
 
   // --- Smooth anchor links ---
   document.querySelectorAll('a[href^="#"]').forEach(link => {
@@ -84,20 +105,30 @@
     });
   });
 
-  // --- Stagger menu items on tab switch ---
-  const menuGrid = document.getElementById('menuGrid');
-  const mutObs = new MutationObserver(() => {
-    const visible = menuGrid.querySelectorAll('.menu__item:not(.hidden)');
-    visible.forEach((item, i) => {
-      item.style.opacity = '0';
-      item.style.transform = 'translateY(12px)';
-      setTimeout(() => {
-        item.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-        item.style.opacity = '1';
-        item.style.transform = 'translateY(0)';
-      }, i * 50);
-    });
+  // --- Theme Switcher ---
+  const themeToggle = document.getElementById('themeToggle');
+  const themePanel = document.getElementById('themePanel');
+  const themeOptions = document.querySelectorAll('.theme-switcher__option');
+
+  themeToggle.addEventListener('click', () => themePanel.classList.toggle('open'));
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.theme-switcher')) themePanel.classList.remove('open');
   });
 
-  mutObs.observe(menuGrid, { childList: false, subtree: true, attributes: true, attributeFilter: ['class'] });
+  themeOptions.forEach(option => {
+    option.addEventListener('click', () => {
+      const theme = option.dataset.theme;
+      themeOptions.forEach(o => o.classList.remove('active'));
+      option.classList.add('active');
+
+      if (theme === 'wabisabi') {
+        document.documentElement.removeAttribute('data-theme');
+      } else {
+        document.documentElement.setAttribute('data-theme', theme);
+      }
+
+      themePanel.classList.remove('open');
+    });
+  });
 })();

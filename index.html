@@ -7,13 +7,33 @@
   <meta name="description" content="Yayuki — Sushi artesanal, delivery y takeaway en Montequinto. Pedidos por WhatsApp.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&family=Noto+Serif+JP:wght@200;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&family=Noto+Serif+JP:wght@200;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <!-- Grain overlay -->
   <div class="grain" aria-hidden="true"></div>
+
+  <!-- Theme decorative elements -->
+  <div class="deco" aria-hidden="true">
+    <!-- Matsuri: page border frame -->
+    <div class="deco__frame"></div>
+    <!-- Matsuri: wave patterns -->
+    <div class="deco__wave deco__wave--left"></div>
+    <div class="deco__wave deco__wave--right"></div>
+    <!-- Sakura: floating petals -->
+    <div class="deco__petal deco__petal--1"></div>
+    <div class="deco__petal deco__petal--2"></div>
+    <div class="deco__petal deco__petal--3"></div>
+    <div class="deco__petal deco__petal--4"></div>
+    <div class="deco__petal deco__petal--5"></div>
+    <!-- Omakase: corner ornaments -->
+    <div class="deco__corner deco__corner--tl"></div>
+    <div class="deco__corner deco__corner--tr"></div>
+    <div class="deco__corner deco__corner--bl"></div>
+    <div class="deco__corner deco__corner--br"></div>
+  </div>
 
   <!-- Navigation -->
   <nav class="nav" id="nav">
@@ -25,6 +45,9 @@
       <a href="#menu">Carta</a>
       <a href="#about">Sobre Nosotros</a>
       <a href="#contact">Contacto</a>
+      <a href="https://www.instagram.com/yayukisushi/" class="nav__social" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </a>
       <a href="https://wa.me/34624619546" class="nav__cta" target="_blank" rel="noopener">Pedir</a>
     </div>
     <button class="nav__burger" id="burger" aria-label="Abrir menú">
@@ -38,10 +61,15 @@
     <a href="#about" class="mobile-menu__link">Sobre Nosotros</a>
     <a href="#contact" class="mobile-menu__link">Contacto</a>
     <a href="https://wa.me/34624619546" class="mobile-menu__link mobile-menu__cta" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+    <a href="https://www.instagram.com/yayukisushi/" class="mobile-menu__link mobile-menu__social" target="_blank" rel="noopener">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      @yayukisushi
+    </a>
   </div>
 
   <!-- Hero -->
   <header class="hero">
+    <div class="hero__bg" aria-hidden="true"></div>
     <div class="hero__content">
       <div class="hero__logo-wrapper">
         <img src="logo.jpg" alt="Yayuki Sushi" class="hero__logo">
@@ -58,23 +86,21 @@
           Pedir Ahora
         </a>
         <a href="#menu" class="btn btn--ghost">Ver Carta</a>
+        <a href="https://www.instagram.com/yayukisushi/" class="btn btn--ghost" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          @yayukisushi
+        </a>
       </div>
     </div>
-    <div class="hero__vertical" aria-hidden="true">
-      <span>矢雪</span>
-    </div>
+    <div class="hero__vertical" aria-hidden="true"><span>矢雪</span></div>
     <div class="hero__scroll" aria-hidden="true">
       <span>scroll</span>
       <div class="hero__scroll-line"></div>
     </div>
   </header>
 
-  <!-- Brushstroke divider -->
-  <div class="divider" aria-hidden="true">
-    <svg viewBox="0 0 1200 20" preserveAspectRatio="none">
-      <path d="M0,10 C150,2 350,18 600,10 C850,2 1050,18 1200,10" stroke="var(--ink)" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.3"/>
-    </svg>
-  </div>
+  <!-- Divider -->
+  <div class="divider" aria-hidden="true"><div class="divider__line"></div></div>
 
   <!-- Menu Section -->
   <section class="menu" id="menu">
@@ -84,269 +110,349 @@
       <p class="section-header__sub">Ingredientes frescos, preparación artesanal</p>
     </div>
 
-    <!-- Category tabs -->
-    <div class="menu__tabs" role="tablist">
-      <button class="menu__tab active" role="tab" data-cat="especiales">Especiales</button>
-      <button class="menu__tab" role="tab" data-cat="otsumami">Otsumami</button>
-      <button class="menu__tab" role="tab" data-cat="hosomaki">Hosomaki</button>
-      <button class="menu__tab" role="tab" data-cat="uramaki">Uramaki</button>
-      <button class="menu__tab" role="tab" data-cat="temaki">Temaki</button>
-      <button class="menu__tab" role="tab" data-cat="nigiri">Nigiri</button>
-      <button class="menu__tab" role="tab" data-cat="sashimi">Sashimi</button>
-      <button class="menu__tab" role="tab" data-cat="combos">Combos</button>
-      <button class="menu__tab" role="tab" data-cat="postres">Postres</button>
-      <button class="menu__tab" role="tab" data-cat="bebidas">Bebidas</button>
+    <!-- Sticky tabs -->
+    <div class="menu__tabs-wrap" id="menuTabsWrap">
+      <div class="menu__tabs" role="tablist" id="menuTabs">
+        <button class="menu__tab active" role="tab" data-cat="especiales">
+          <span class="menu__tab-icon">✦</span>Especiales
+        </button>
+        <button class="menu__tab" role="tab" data-cat="otsumami">
+          <span class="menu__tab-icon">🍜</span>Otsumami
+        </button>
+        <button class="menu__tab" role="tab" data-cat="hosomaki">
+          <span class="menu__tab-icon">◎</span>Hosomaki
+        </button>
+        <button class="menu__tab" role="tab" data-cat="uramaki">
+          <span class="menu__tab-icon">◉</span>Uramaki
+        </button>
+        <button class="menu__tab" role="tab" data-cat="temaki">
+          <span class="menu__tab-icon">▽</span>Temaki
+        </button>
+        <button class="menu__tab" role="tab" data-cat="nigiri">
+          <span class="menu__tab-icon">⬮</span>Nigiri
+        </button>
+        <button class="menu__tab" role="tab" data-cat="sashimi">
+          <span class="menu__tab-icon">⧫</span>Sashimi
+        </button>
+        <button class="menu__tab" role="tab" data-cat="combos">
+          <span class="menu__tab-icon">▣</span>Combos
+        </button>
+        <button class="menu__tab" role="tab" data-cat="postres">
+          <span class="menu__tab-icon">●</span>Postres
+        </button>
+        <button class="menu__tab" role="tab" data-cat="bebidas">
+          <span class="menu__tab-icon">◇</span>Bebidas
+        </button>
+      </div>
     </div>
 
-    <!-- Menu items -->
+    <!-- Menu cards grid -->
     <div class="menu__grid" id="menuGrid">
 
       <!-- Especiales -->
-      <div class="menu__item" data-cat="especiales">
-        <div class="menu__item-info">
-          <h3>Bao Buns</h3>
+      <div class="menu__card" data-cat="especiales">
+        <div class="menu__card-icon">
+          <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="16" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 20h16M20 14v12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="menu__card-body">
+          <div class="menu__card-header"><h3>Bao Buns</h3><span class="menu__card-price">€5.50</span></div>
           <p>Panecillos al vapor rellenos con proteína a elegir</p>
         </div>
-        <span class="menu__item-price">€5.50</span>
       </div>
-      <div class="menu__item" data-cat="especiales">
-        <div class="menu__item-info">
-          <h3>Special Rolls</h3>
+      <div class="menu__card" data-cat="especiales">
+        <div class="menu__card-icon">
+          <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="16" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 20h16M20 14v12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="menu__card-body">
+          <div class="menu__card-header"><h3>Special Rolls</h3><span class="menu__card-price">€9.00</span></div>
           <p>Creaciones del chef, pregunta por la selección del día</p>
         </div>
-        <span class="menu__item-price">€9.00</span>
       </div>
 
       <!-- Otsumami -->
-      <div class="menu__item" data-cat="otsumami">
-        <div class="menu__item-info">
-          <h3>Edamame</h3>
+      <div class="menu__card" data-cat="otsumami">
+        <div class="menu__card-icon">
+          <svg viewBox="0 0 40 40"><ellipse cx="20" cy="22" rx="14" ry="8" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 22c0-6 4.5-12 10-12s10 6 10 12" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+        </div>
+        <div class="menu__card-body">
+          <div class="menu__card-header"><h3>Edamame</h3><span class="menu__card-price">€3.50</span></div>
           <p>Vainas de soja con sal marina</p>
         </div>
-        <span class="menu__item-price">€3.50</span>
       </div>
-      <div class="menu__item" data-cat="otsumami">
-        <div class="menu__item-info">
-          <h3>Takoyaki</h3>
+      <div class="menu__card" data-cat="otsumami">
+        <div class="menu__card-icon">
+          <svg viewBox="0 0 40 40"><ellipse cx="20" cy="22" rx="14" ry="8" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 22c0-6 4.5-12 10-12s10 6 10 12" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+        </div>
+        <div class="menu__card-body">
+          <div class="menu__card-header"><h3>Takoyaki</h3><span class="menu__card-price">€5.50</span></div>
           <p>Bolitas de pulpo con salsa especial</p>
         </div>
-        <span class="menu__item-price">€5.50</span>
       </div>
-      <div class="menu__item" data-cat="otsumami">
-        <div class="menu__item-info">
-          <h3>Gyozas</h3>
+      <div class="menu__card" data-cat="otsumami">
+        <div class="menu__card-icon">
+          <svg viewBox="0 0 40 40"><ellipse cx="20" cy="22" rx="14" ry="8" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 22c0-6 4.5-12 10-12s10 6 10 12" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+        </div>
+        <div class="menu__card-body">
+          <div class="menu__card-header"><h3>Gyozas</h3><span class="menu__card-price">€5.00</span></div>
           <p>Empanadillas japonesas a la plancha</p>
         </div>
-        <span class="menu__item-price">€5.00</span>
       </div>
-      <div class="menu__item" data-cat="otsumami">
-        <div class="menu__item-info">
-          <h3>Arroz de Sushi</h3>
+      <div class="menu__card" data-cat="otsumami">
+        <div class="menu__card-icon">
+          <svg viewBox="0 0 40 40"><ellipse cx="20" cy="22" rx="14" ry="8" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 22c0-6 4.5-12 10-12s10 6 10 12" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+        </div>
+        <div class="menu__card-body">
+          <div class="menu__card-header"><h3>Arroz de Sushi</h3><span class="menu__card-price">€2.50</span></div>
           <p>Cuenco de arroz aderezado estilo japonés</p>
         </div>
-        <span class="menu__item-price">€2.50</span>
       </div>
 
       <!-- Hosomaki -->
-      <div class="menu__item" data-cat="hosomaki">
-        <div class="menu__item-info">
-          <h3>Kappa Maki</h3>
+      <div class="menu__card" data-cat="hosomaki">
+        <div class="menu__card-icon">
+          <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="12" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="20" cy="20" r="5" fill="none" stroke="currentColor" stroke-width="1"/></svg>
+        </div>
+        <div class="menu__card-body">
+          <div class="menu__card-header"><h3>Kappa Maki</h3><span class="menu__card-price">€3.50</span></div>
           <p>Pepino</p>
         </div>
-        <span class="menu__item-price">€3.50</span>
       </div>
-      <div class="menu__item" data-cat="hosomaki">
-        <div class="menu__item-info">
-          <h3>Avocado Maki</h3>
+      <div class="menu__card" data-cat="hosomaki">
+        <div class="menu__card-icon">
+          <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="12" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="20" cy="20" r="5" fill="none" stroke="currentColor" stroke-width="1"/></svg>
+        </div>
+        <div class="menu__card-body">
+          <div class="menu__card-header"><h3>Avocado Maki</h3><span class="menu__card-price">€3.90</span></div>
           <p>Aguacate</p>
         </div>
-        <span class="menu__item-price">€3.90</span>
       </div>
-      <div class="menu__item" data-cat="hosomaki">
-        <div class="menu__item-info">
-          <h3>Sake Maki</h3>
+      <div class="menu__card" data-cat="hosomaki">
+        <div class="menu__card-icon">
+          <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="12" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="20" cy="20" r="5" fill="none" stroke="currentColor" stroke-width="1"/></svg>
+        </div>
+        <div class="menu__card-body">
+          <div class="menu__card-header"><h3>Sake Maki</h3><span class="menu__card-price">€4.50</span></div>
           <p>Salmón fresco</p>
         </div>
-        <span class="menu__item-price">€4.50</span>
       </div>
-      <div class="menu__item" data-cat="hosomaki">
-        <div class="menu__item-info">
-          <h3>Tekka Maki</h3>
+      <div class="menu__card" data-cat="hosomaki">
+        <div class="menu__card-icon">
+          <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="12" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="20" cy="20" r="5" fill="none" stroke="currentColor" stroke-width="1"/></svg>
+        </div>
+        <div class="menu__card-body">
+          <div class="menu__card-header"><h3>Tekka Maki</h3><span class="menu__card-price">€4.90</span></div>
           <p>Atún rojo</p>
         </div>
-        <span class="menu__item-price">€4.90</span>
       </div>
 
       <!-- Uramaki -->
-      <div class="menu__item" data-cat="uramaki">
-        <div class="menu__item-info">
-          <h3>Spicy Salmon Roll</h3>
+      <div class="menu__card" data-cat="uramaki">
+        <div class="menu__card-icon">
+          <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="12" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="20" cy="20" r="8" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="3 2"/></svg>
+        </div>
+        <div class="menu__card-body">
+          <div class="menu__card-header"><h3>Spicy Salmon Roll</h3><span class="menu__card-price">€8.50</span></div>
           <p>Salmón picante, aguacate, sésamo tostado</p>
         </div>
-        <span class="menu__item-price">€8.50</span>
       </div>
-      <div class="menu__item" data-cat="uramaki">
-        <div class="menu__item-info">
-          <h3>Tuna Crunch Roll</h3>
+      <div class="menu__card" data-cat="uramaki">
+        <div class="menu__card-icon">
+          <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="12" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="20" cy="20" r="8" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="3 2"/></svg>
+        </div>
+        <div class="menu__card-body">
+          <div class="menu__card-header"><h3>Tuna Crunch Roll</h3><span class="menu__card-price">€9.00</span></div>
           <p>Atún, tempura crunch, cebollino</p>
         </div>
-        <span class="menu__item-price">€9.00</span>
       </div>
-      <div class="menu__item" data-cat="uramaki">
-        <div class="menu__item-info">
-          <h3>Ebi Tempura Roll</h3>
+      <div class="menu__card" data-cat="uramaki">
+        <div class="menu__card-icon">
+          <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="12" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="20" cy="20" r="8" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="3 2"/></svg>
+        </div>
+        <div class="menu__card-body">
+          <div class="menu__card-header"><h3>Ebi Tempura Roll</h3><span class="menu__card-price">€9.50</span></div>
           <p>Langostino en tempura, aguacate, salsa teriyaki</p>
         </div>
-        <span class="menu__item-price">€9.50</span>
       </div>
 
       <!-- Temaki -->
-      <div class="menu__item" data-cat="temaki">
-        <div class="menu__item-info">
-          <h3>Unagi Temaki</h3>
+      <div class="menu__card" data-cat="temaki">
+        <div class="menu__card-icon">
+          <svg viewBox="0 0 40 40"><path d="M20 6L8 34h24L20 6z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="menu__card-body">
+          <div class="menu__card-header"><h3>Unagi Temaki</h3><span class="menu__card-price">€6.50</span></div>
           <p>Anguila glaseada, aguacate</p>
         </div>
-        <span class="menu__item-price">€6.50</span>
       </div>
-      <div class="menu__item" data-cat="temaki">
-        <div class="menu__item-info">
-          <h3>Wagyu Temaki</h3>
+      <div class="menu__card" data-cat="temaki">
+        <div class="menu__card-icon">
+          <svg viewBox="0 0 40 40"><path d="M20 6L8 34h24L20 6z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="menu__card-body">
+          <div class="menu__card-header"><h3>Wagyu Temaki</h3><span class="menu__card-price">€9.00</span></div>
           <p>Wagyu flambeado, trufa, cebollino</p>
         </div>
-        <span class="menu__item-price">€9.00</span>
       </div>
 
       <!-- Nigiri -->
-      <div class="menu__item" data-cat="nigiri">
-        <div class="menu__item-info">
-          <h3>Sake Nigiri</h3>
+      <div class="menu__card" data-cat="nigiri">
+        <div class="menu__card-icon">
+          <svg viewBox="0 0 40 40"><ellipse cx="20" cy="24" rx="12" ry="6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 20c0 0 3-8 10-8s10 8 10 8" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+        </div>
+        <div class="menu__card-body">
+          <div class="menu__card-header"><h3>Sake Nigiri</h3><span class="menu__card-price">€4.50</span></div>
           <p>Salmón · 2 piezas</p>
         </div>
-        <span class="menu__item-price">€4.50</span>
       </div>
-      <div class="menu__item" data-cat="nigiri">
-        <div class="menu__item-info">
-          <h3>Hamachi Nigiri</h3>
+      <div class="menu__card" data-cat="nigiri">
+        <div class="menu__card-icon">
+          <svg viewBox="0 0 40 40"><ellipse cx="20" cy="24" rx="12" ry="6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 20c0 0 3-8 10-8s10 8 10 8" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+        </div>
+        <div class="menu__card-body">
+          <div class="menu__card-header"><h3>Hamachi Nigiri</h3><span class="menu__card-price">€5.00</span></div>
           <p>Pez limón · 2 piezas</p>
         </div>
-        <span class="menu__item-price">€5.00</span>
       </div>
-      <div class="menu__item" data-cat="nigiri">
-        <div class="menu__item-info">
-          <h3>Maguro Nigiri</h3>
+      <div class="menu__card" data-cat="nigiri">
+        <div class="menu__card-icon">
+          <svg viewBox="0 0 40 40"><ellipse cx="20" cy="24" rx="12" ry="6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 20c0 0 3-8 10-8s10 8 10 8" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+        </div>
+        <div class="menu__card-body">
+          <div class="menu__card-header"><h3>Maguro Nigiri</h3><span class="menu__card-price">€5.50</span></div>
           <p>Atún rojo · 2 piezas</p>
         </div>
-        <span class="menu__item-price">€5.50</span>
       </div>
-      <div class="menu__item" data-cat="nigiri">
-        <div class="menu__item-info">
-          <h3>Wagyu Nigiri</h3>
+      <div class="menu__card" data-cat="nigiri">
+        <div class="menu__card-icon">
+          <svg viewBox="0 0 40 40"><ellipse cx="20" cy="24" rx="12" ry="6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 20c0 0 3-8 10-8s10 8 10 8" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+        </div>
+        <div class="menu__card-body">
+          <div class="menu__card-header"><h3>Wagyu Nigiri</h3><span class="menu__card-price">€7.00</span></div>
           <p>Wagyu flambeado · 2 piezas</p>
         </div>
-        <span class="menu__item-price">€7.00</span>
       </div>
 
       <!-- Sashimi -->
-      <div class="menu__item" data-cat="sashimi">
-        <div class="menu__item-info">
-          <h3>Sashimi Salmón</h3>
+      <div class="menu__card" data-cat="sashimi">
+        <div class="menu__card-icon">
+          <svg viewBox="0 0 40 40"><path d="M8 20 Q14 10 20 20 Q26 30 32 20" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 24 Q14 14 20 24 Q26 34 32 24" fill="none" stroke="currentColor" stroke-width="1"/></svg>
+        </div>
+        <div class="menu__card-body">
+          <div class="menu__card-header"><h3>Sashimi Salmón</h3><span class="menu__card-price">€7.50</span></div>
           <p>5 cortes de salmón premium</p>
         </div>
-        <span class="menu__item-price">€7.50</span>
       </div>
-      <div class="menu__item" data-cat="sashimi">
-        <div class="menu__item-info">
-          <h3>Sashimi Atún</h3>
+      <div class="menu__card" data-cat="sashimi">
+        <div class="menu__card-icon">
+          <svg viewBox="0 0 40 40"><path d="M8 20 Q14 10 20 20 Q26 30 32 20" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 24 Q14 14 20 24 Q26 34 32 24" fill="none" stroke="currentColor" stroke-width="1"/></svg>
+        </div>
+        <div class="menu__card-body">
+          <div class="menu__card-header"><h3>Sashimi Atún</h3><span class="menu__card-price">€8.50</span></div>
           <p>5 cortes de atún rojo</p>
         </div>
-        <span class="menu__item-price">€8.50</span>
       </div>
-      <div class="menu__item" data-cat="sashimi">
-        <div class="menu__item-info">
-          <h3>Sashimi Mixto</h3>
+      <div class="menu__card" data-cat="sashimi">
+        <div class="menu__card-icon">
+          <svg viewBox="0 0 40 40"><path d="M8 20 Q14 10 20 20 Q26 30 32 20" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 24 Q14 14 20 24 Q26 34 32 24" fill="none" stroke="currentColor" stroke-width="1"/></svg>
+        </div>
+        <div class="menu__card-body">
+          <div class="menu__card-header"><h3>Sashimi Mixto</h3><span class="menu__card-price">€14.00</span></div>
           <p>Selección variada del día · 10 cortes</p>
         </div>
-        <span class="menu__item-price">€14.00</span>
       </div>
 
       <!-- Combos -->
-      <div class="menu__item" data-cat="combos">
-        <div class="menu__item-info">
-          <h3>Bento Individual</h3>
+      <div class="menu__card" data-cat="combos">
+        <div class="menu__card-icon">
+          <svg viewBox="0 0 40 40"><rect x="8" y="10" width="24" height="20" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><line x1="20" y1="10" x2="20" y2="30" stroke="currentColor" stroke-width="1"/><line x1="8" y1="20" x2="32" y2="20" stroke="currentColor" stroke-width="1"/></svg>
+        </div>
+        <div class="menu__card-body">
+          <div class="menu__card-header"><h3>Bento Individual</h3><span class="menu__card-price">€13.90</span></div>
           <p>Selección del chef para 1 persona</p>
         </div>
-        <span class="menu__item-price">€13.90</span>
       </div>
-      <div class="menu__item" data-cat="combos">
-        <div class="menu__item-info">
-          <h3>Bento Dúo</h3>
+      <div class="menu__card" data-cat="combos">
+        <div class="menu__card-icon">
+          <svg viewBox="0 0 40 40"><rect x="8" y="10" width="24" height="20" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><line x1="20" y1="10" x2="20" y2="30" stroke="currentColor" stroke-width="1"/><line x1="8" y1="20" x2="32" y2="20" stroke="currentColor" stroke-width="1"/></svg>
+        </div>
+        <div class="menu__card-body">
+          <div class="menu__card-header"><h3>Bento Dúo</h3><span class="menu__card-price">€26.50</span></div>
           <p>Surtido variado para 2 personas</p>
         </div>
-        <span class="menu__item-price">€26.50</span>
       </div>
-      <div class="menu__item" data-cat="combos">
-        <div class="menu__item-info">
-          <h3>Bento Familiar</h3>
+      <div class="menu__card" data-cat="combos">
+        <div class="menu__card-icon">
+          <svg viewBox="0 0 40 40"><rect x="8" y="10" width="24" height="20" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><line x1="20" y1="10" x2="20" y2="30" stroke="currentColor" stroke-width="1"/><line x1="8" y1="20" x2="32" y2="20" stroke="currentColor" stroke-width="1"/></svg>
+        </div>
+        <div class="menu__card-body">
+          <div class="menu__card-header"><h3>Bento Familiar</h3><span class="menu__card-price">€52.50</span></div>
           <p>Gran selección para 3-4 personas</p>
         </div>
-        <span class="menu__item-price">€52.50</span>
       </div>
 
       <!-- Postres -->
-      <div class="menu__item" data-cat="postres">
-        <div class="menu__item-info">
-          <h3>Mochi Helado</h3>
+      <div class="menu__card" data-cat="postres">
+        <div class="menu__card-icon">
+          <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="10" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="16" cy="18" r="3" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="24" cy="22" r="3" fill="none" stroke="currentColor" stroke-width="1"/></svg>
+        </div>
+        <div class="menu__card-body">
+          <div class="menu__card-header"><h3>Mochi Helado</h3><span class="menu__card-price">€4.50</span></div>
           <p>Surtido de sabores · 3 uds</p>
         </div>
-        <span class="menu__item-price">€4.50</span>
       </div>
-      <div class="menu__item" data-cat="postres">
-        <div class="menu__item-info">
-          <h3>Tarta Chocolate-Miso</h3>
+      <div class="menu__card" data-cat="postres">
+        <div class="menu__card-icon">
+          <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="10" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="16" cy="18" r="3" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="24" cy="22" r="3" fill="none" stroke="currentColor" stroke-width="1"/></svg>
+        </div>
+        <div class="menu__card-body">
+          <div class="menu__card-header"><h3>Tarta Chocolate-Miso</h3><span class="menu__card-price">€5.00</span></div>
           <p>Chocolate negro con un toque de miso blanco</p>
         </div>
-        <span class="menu__item-price">€5.00</span>
       </div>
-      <div class="menu__item" data-cat="postres">
-        <div class="menu__item-info">
-          <h3>Tarta Idiazábal</h3>
+      <div class="menu__card" data-cat="postres">
+        <div class="menu__card-icon">
+          <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="10" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="16" cy="18" r="3" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="24" cy="22" r="3" fill="none" stroke="currentColor" stroke-width="1"/></svg>
+        </div>
+        <div class="menu__card-body">
+          <div class="menu__card-header"><h3>Tarta Idiazábal</h3><span class="menu__card-price">€5.00</span></div>
           <p>Tarta de queso Idiazábal estilo japonés</p>
         </div>
-        <span class="menu__item-price">€5.00</span>
       </div>
 
       <!-- Bebidas -->
-      <div class="menu__item" data-cat="bebidas">
-        <div class="menu__item-info">
-          <h3>Refresco</h3>
+      <div class="menu__card" data-cat="bebidas">
+        <div class="menu__card-icon">
+          <svg viewBox="0 0 40 40"><path d="M12 8h16l-2 24H14L12 8z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 8h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="menu__card-body">
+          <div class="menu__card-header"><h3>Refresco</h3><span class="menu__card-price">€1.80</span></div>
           <p>Coca-Cola, Fanta, Aquarius</p>
         </div>
-        <span class="menu__item-price">€1.80</span>
       </div>
-      <div class="menu__item" data-cat="bebidas">
-        <div class="menu__item-info">
-          <h3>Cerveza Japonesa</h3>
+      <div class="menu__card" data-cat="bebidas">
+        <div class="menu__card-icon">
+          <svg viewBox="0 0 40 40"><path d="M12 8h16l-2 24H14L12 8z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 8h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="menu__card-body">
+          <div class="menu__card-header"><h3>Cerveza Japonesa</h3><span class="menu__card-price">€3.00</span></div>
           <p>Asahi o Kirin Ichiban</p>
         </div>
-        <span class="menu__item-price">€3.00</span>
       </div>
-      <div class="menu__item" data-cat="bebidas">
-        <div class="menu__item-info">
-          <h3>Fino / Manzanilla</h3>
+      <div class="menu__card" data-cat="bebidas">
+        <div class="menu__card-icon">
+          <svg viewBox="0 0 40 40"><path d="M12 8h16l-2 24H14L12 8z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 8h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="menu__card-body">
+          <div class="menu__card-header"><h3>Fino / Manzanilla</h3><span class="menu__card-price">€2.50</span></div>
           <p>Selección de Jerez</p>
         </div>
-        <span class="menu__item-price">€2.50</span>
       </div>
 
     </div>
   </section>
 
   <!-- Divider -->
-  <div class="divider" aria-hidden="true">
-    <svg viewBox="0 0 1200 20" preserveAspectRatio="none">
-      <path d="M0,10 C200,18 400,2 600,10 C800,18 1000,2 1200,10" stroke="var(--ink)" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.25"/>
-    </svg>
-  </div>
+  <div class="divider" aria-hidden="true"><div class="divider__line"></div></div>
 
   <!-- About -->
   <section class="about" id="about">
@@ -389,6 +495,10 @@
           <p>WhatsApp: <a href="https://wa.me/34624619546">624 619 546</a></p>
         </div>
         <div class="contact__detail">
+          <h4>Síguenos</h4>
+          <p><a href="https://www.instagram.com/yayukisushi/" target="_blank" rel="noopener">@yayukisushi</a> en Instagram</p>
+        </div>
+        <div class="contact__detail">
           <h4>Cómo pedir</h4>
           <p>1. Elige de la carta<br>2. Envía tu pedido por WhatsApp<br>3. Te confirmamos y preparamos</p>
         </div>
@@ -420,11 +530,42 @@
         <a href="#menu">Carta</a>
         <a href="#about">Nosotros</a>
         <a href="#contact">Contacto</a>
+        <a href="https://www.instagram.com/yayukisushi/" target="_blank" rel="noopener">Instagram</a>
         <a href="https://wa.me/34624619546" target="_blank" rel="noopener">WhatsApp</a>
       </div>
       <p class="footer__copy">&copy; 2026 Yayuki. Montequinto, Sevilla.</p>
     </div>
   </footer>
+
+  <!-- Theme Switcher -->
+  <div class="theme-switcher" id="themeSwitcher">
+    <button class="theme-switcher__toggle" id="themeToggle" aria-label="Cambiar estilo">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+    </button>
+    <div class="theme-switcher__panel" id="themePanel">
+      <p class="theme-switcher__label">Estilo</p>
+      <button class="theme-switcher__option active" data-theme="wabisabi">
+        <span class="theme-swatch theme-swatch--wabisabi"></span>
+        <span>Wabi-Sabi</span>
+      </button>
+      <button class="theme-switcher__option" data-theme="dark">
+        <span class="theme-swatch theme-swatch--dark"></span>
+        <span>Noche</span>
+      </button>
+      <button class="theme-switcher__option" data-theme="sakura">
+        <span class="theme-swatch theme-swatch--sakura"></span>
+        <span>Sakura</span>
+      </button>
+      <button class="theme-switcher__option" data-theme="matsuri">
+        <span class="theme-swatch theme-swatch--matsuri"></span>
+        <span>Matsuri</span>
+      </button>
+      <button class="theme-switcher__option" data-theme="omakase">
+        <span class="theme-swatch theme-swatch--omakase"></span>
+        <span>Omakase</span>
+      </button>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
